@@ -41,7 +41,19 @@ public:
 
     // Operator+ fuggveny
 
+    Fraction operator+(const Fraction &other) const {}
+
     // Konverzios konstruktor
 
+    Fraction(double d) {}
+
     // reciprok
+    Fraction reciprocal() const
+    {
+        if (numerator == 0)
+        {
+            throw FractionException("Cannot divide by zero");
+        }
+        return Fraction(0, denominator, numerator);
+    }
 };
