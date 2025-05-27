@@ -3,10 +3,16 @@
 
 enum class PowerPlantType
 {
-    THERMAL,
-    NUCLEAR,
+    SOLAR,
+    WIND,
     HYDRO,
-    RENEWABLE
+    COAL,
+    GAS,
+    OIL,
+    NUCLEAR,
+    GEOTHERMAL,
+    BIOMASS,
+    OTHER
 };
 
 class PowerPlant : public Node
