@@ -114,8 +114,8 @@ void Network::exportToJson(const std::string& filename) const
 	for (const auto& edge : edges)
 	{
 		j["edges"].push_back({
-			{"from", edge->getFromID()},
-			{"to", edge->getToID()}
+	{"source", edge->getFromID()},
+	{"target", edge->getToID()}
 			});
 	}
 

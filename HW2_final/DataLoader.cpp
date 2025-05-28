@@ -142,7 +142,7 @@ void DataLoader::loadNetworkFromDatabase(const std::string &dbPath, Network &net
 void DataLoader::loadNetworkFromTextFile(const std::string& filePath, Network& network) {
     std::ifstream infile(filePath);
     if (!infile.is_open()) {
-        throw std::runtime_error("Nem sikerült megnyitni a fájlt: " + filePath);
+        throw std::runtime_error("Nem sikerult megnyitni a fajlt: " + filePath);
     }
 
     std::string line;
@@ -163,10 +163,11 @@ void DataLoader::loadNetworkFromTextFile(const std::string& filePath, Network& n
 
                 PowerPlantType pType = PowerPlantType::OTHER;
                 if (plantTypeStr == "NUCLEAR") pType = PowerPlantType::NUCLEAR;
-                else if (plantTypeStr == "THERMo") pType = PowerPlantType::THERMO;
+                else if (plantTypeStr == "THERMO") pType = PowerPlantType::THERMO;
                 else if (plantTypeStr == "HYDRO") pType = PowerPlantType::HYDRO;
                 else if (plantTypeStr == "BIOMASS") pType = PowerPlantType::BIOMASS;
                 else if (plantTypeStr == "WIND") pType = PowerPlantType::WIND;
+                else if (plantTypeStr == "SOLAR") pType = PowerPlantType::SOLAR;
 
                 network.addNode(new PowerPlant(id, power, voltage, pType));
             }

@@ -41,11 +41,12 @@ std::string PowerPlant::getID() const
 
 std::string PowerPlant::getPlantType() const {
 	switch (type) {
-	case PowerPlantType::HYDRO: return "hydro";
-	case PowerPlantType::BIOMASS: return "biomass";
 	case PowerPlantType::THERMO: return "thermo";
 	case PowerPlantType::NUCLEAR: return "nuclear";
+	case PowerPlantType::HYDRO: return "hydro";
+	case PowerPlantType::BIOMASS: return "biomass";
 	case PowerPlantType::WIND: return "wind";
+	case PowerPlantType::SOLAR: return "solar";
 	default: return "unknown";
 	}
 }

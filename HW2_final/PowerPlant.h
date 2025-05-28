@@ -4,11 +4,12 @@
 
 enum class PowerPlantType
 {
+	THERMO,
 	NUCLEAR,
 	HYDRO,
-	THERMO,
-	BIOMASS,
 	WIND,
+	BIOMASS,
+	SOLAR,
 	OTHER
 };
 

@@ -11,7 +11,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if path == '/':
             return os.path.join(os.getcwd(), 'web', 'index.html')
         elif path == '/network.json':
-            return os.path.join(os.getcwd(), 'network.json')
+            return os.path.join(os.getcwd(), 'web', 'network.json')
         else:
             return os.path.join(os.getcwd(), 'web', path.lstrip('/'))
 
