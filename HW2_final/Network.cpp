@@ -11,15 +11,15 @@
 #include <filesystem>
 
 #include <fstream>
-#include "json.hpp"  
+#include "json.hpp"
 
 Network::~Network()
 {
-	for (auto& pair : nodes)
+	for (auto &pair : nodes)
 	{
 		delete pair.second;
 	}
-	for (auto& edge : edges)
+	for (auto &edge : edges)
 	{
 		delete edge;
 	}
@@ -65,12 +65,14 @@ const std::vector<Edge *> &Network::getEdges() const
 
 void Network::printNetworkInfo() const
 {
-	std::cout << std::endl << "--- Halozat csomopontjai ---" << std::endl;
+	std::cout << std::endl
+			  << "--- Halozat csomopontjai ---" << std::endl;
 	for (const auto &pair : nodes)
 	{
 		std::cout << pair.second->info() << std::endl;
 	}
-	std::cout << std::endl << "--- Halozat elei---" << std::endl;
+	std::cout << std::endl
+			  << "--- Halozat elei---" << std::endl;
 	for (const auto &edge : edges)
 	{
 		std::cout << edge->info() << std::endl;
@@ -80,12 +82,13 @@ void Network::printNetworkInfo() const
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
-void Network::exportToJson(const std::string& filename) const
+void Network::exportToJson(const std::string &filename) const
 {
 	fs::path pathToFile(filename);
 	fs::path dir = pathToFile.parent_path();
 
-	if (!dir.empty() && !fs::exists(dir)) {
+	if (!dir.empty() && !fs::exists(dir))
+	{
 		fs::create_directories(dir);
 	}
 
@@ -93,17 +96,19 @@ void Network::exportToJson(const std::string& filename) const
 	j["nodes"] = json::array();
 	j["edges"] = json::array();
 
-	for (const auto& pair : nodes)
+	for (const auto &pair : nodes)
 	{
-		const std::string& id = pair.first;
-		const auto& nodePtr = pair.second;
+		const std::string &id = pair.first;
+		const auto &nodePtr = pair.second;
 
 		std::string type = nodePtr->getType();
-		json nodeJson = { {"id", id}, {"type", type} };
+		json nodeJson = {{"id", id}, {"type", type}};
 
-		if (type == "PowerPlant") {
-			const PowerPlant* pp = dynamic_cast<const PowerPlant*>(nodePtr);
-			if (pp) {
+		if (type == "PowerPlant")
+		{
+			const PowerPlant *pp = dynamic_cast<const PowerPlant *>(nodePtr);
+			if (pp)
+			{
 				nodeJson["plantType"] = pp->getPlantType();
 			}
 		}
@@ -111,12 +116,10 @@ void Network::exportToJson(const std::string& filename) const
 		j["nodes"].push_back(nodeJson);
 	}
 
-	for (const auto& edge : edges)
+	for (const auto &edge : edges)
 	{
-		j["edges"].push_back({
-	{"source", edge->getFromID()},
-	{"target", edge->getToID()}
-			});
+		j["edges"].push_back({{"source", edge->getFromID()},
+							  {"target", edge->getToID()}});
 	}
 
 	std::ofstream file(filename);

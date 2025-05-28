@@ -13,7 +13,7 @@ public:
 	Node(const std::string &id);
 	virtual ~Node() = default;
 
-	virtual std::string getID() const;
+	virtual std::string getID() const = 0;
 
 	virtual std::string info() const = 0;
 

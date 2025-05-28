@@ -32,6 +32,6 @@ public:
 	std::string getPlantType() const;
 
 	std::string getType() const override;
-	std::string getID() const ;
+	std::string getID() const override;
 	std::string info() const override;
 };

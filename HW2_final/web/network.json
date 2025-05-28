@@ -1,0 +1,149 @@
+{
+    "edges": [
+        {
+            "source": "PAKS1",
+            "target": "TS_PAKS"
+        },
+        {
+            "source": "MATRA1",
+            "target": "TS_MATRA"
+        },
+        {
+            "source": "GYOR_BIOM",
+            "target": "TS_NYUGAT"
+        },
+        {
+            "source": "KISVARDA_HYDRO",
+            "target": "TS_KELET"
+        },
+        {
+            "source": "BAKONY_WIND",
+            "target": "TS_NYUGAT"
+        },
+        {
+            "source": "KAPOSVAR_SOLAR",
+            "target": "TS_SOUTH"
+        },
+        {
+            "source": "PUSZTASZER_SOLAR",
+            "target": "TS_CENTRAL"
+        },
+        {
+            "source": "TS_SOUTH",
+            "target": "SZEGED"
+        },
+        {
+            "source": "TS_CENTRAL",
+            "target": "BUDAPEST"
+        },
+        {
+            "source": "TS_PAKS",
+            "target": "TS_NYUGAT"
+        },
+        {
+            "source": "TS_MATRA",
+            "target": "TS_KELET"
+        },
+        {
+            "source": "TS_NYUGAT",
+            "target": "GYOR"
+        },
+        {
+            "source": "TS_NYUGAT",
+            "target": "VESZPREM"
+        },
+        {
+            "source": "TS_PAKS",
+            "target": "BUDAPEST"
+        },
+        {
+            "source": "TS_KELET",
+            "target": "MISKOLC"
+        },
+        {
+            "source": "TS_KELET",
+            "target": "SZEGED"
+        }
+    ],
+    "nodes": [
+        {
+            "id": "BAKONY_WIND",
+            "plantType": "wind",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "BUDAPEST",
+            "type": "City"
+        },
+        {
+            "id": "GYOR",
+            "type": "City"
+        },
+        {
+            "id": "GYOR_BIOM",
+            "plantType": "biomass",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "KAPOSVAR_SOLAR",
+            "plantType": "solar",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "KISVARDA_HYDRO",
+            "plantType": "hydro",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "MATRA1",
+            "plantType": "thermo",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "MISKOLC",
+            "type": "City"
+        },
+        {
+            "id": "PAKS1",
+            "plantType": "nuclear",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "PUSZTASZER_SOLAR",
+            "plantType": "solar",
+            "type": "PowerPlant"
+        },
+        {
+            "id": "SZEGED",
+            "type": "Industrial"
+        },
+        {
+            "id": "TS_CENTRAL",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "TS_KELET",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "TS_MATRA",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "TS_NYUGAT",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "TS_PAKS",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "TS_SOUTH",
+            "type": "TransformerStation"
+        },
+        {
+            "id": "VESZPREM",
+            "type": "Industrial"
+        }
+    ]
+}
